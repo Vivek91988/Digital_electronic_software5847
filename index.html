@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#101828"><title>Digital Electronics Logic Gate Simulator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar"><a class="brand" href="#" aria-label="Simulator home"><span class="brand-mark">Y</span><span><strong>Digital Electronics</strong><small>Logic Gate Simulator</small></span></a><div class="header-actions"><span class="status"><i></i> Simulation ready</span><button id="themeToggle" class="icon-button" type="button" aria-label="Switch to dark mode" title="Toggle color theme">☾</button></div></header>
+  <main>
+    <section class="intro"><div><p class="eyebrow">DIGITAL LOGIC LAB</p><h1>See logic in action.</h1><p>Explore gates, build intuition, and watch binary inputs become outputs.</p></div><div class="intro-chip"><span>01</span><span>Interactive simulator</span></div></section>
+    <nav class="tabs" aria-label="Main sections"><button class="tab active" data-tab="simulator">Simulator</button><button class="tab" data-tab="learn">Learn</button><button class="tab" data-tab="quiz">Quiz <span class="new-dot"></span></button></nav>
+    <section id="simulator" class="tab-panel active">
+      <div class="workspace">
+        <aside class="panel selector"><div class="panel-heading"><div><p class="eyebrow">COMPONENTS</p><h2>Choose a circuit</h2></div><span class="count">13</span></div><div class="component-group"><span class="group-title">LOGIC GATES</span><div id="gateChoices" class="choice-grid"></div></div><div class="component-group"><span class="group-title">READY-MADE CIRCUITS</span><div id="circuitChoices" class="choice-list"></div></div><div class="tip"><span>✦</span><p>Tip: Toggle an input to see how the output changes.</p></div></aside>
+        <section class="panel stage"><div class="panel-heading stage-heading"><div><p class="eyebrow" id="categoryLabel">LOGIC GATE</p><h2 id="simTitle">AND Gate</h2></div><span class="live-pill"><i></i> LIVE</span></div><p id="simDescription" class="stage-description"></p><div id="circuitCanvas" class="circuit-canvas" aria-label="Interactive circuit diagram"></div><div id="inputControls" class="input-controls"></div><div class="output-strip" id="outputControls"></div><div class="expression-card"><div><span class="group-title">BOOLEAN EXPRESSION</span><div id="expression" class="expression">Y = A · B</div></div><span id="expressionHelp" class="expression-help"></span></div><div id="notice" class="notice" role="status" aria-live="polite"></div></section>
+        <aside class="panel truth"><div class="panel-heading"><div><p class="eyebrow">REFERENCE</p><h2>Truth table</h2></div><span id="rowCount" class="count">4 rows</span></div><p class="table-hint">The highlighted row matches your current inputs.</p><div class="table-wrap"><table id="truthTable"><caption class="sr-only">Truth table for selected logic component</caption><thead></thead><tbody></tbody></table></div><button id="downloadCsv" class="download-button" type="button"><span>↓</span> Download as CSV</button></aside>
+      </div>
+    </section>
+    <section id="learn" class="tab-panel learn-panel"><div class="section-title"><p class="eyebrow">QUICK REFERENCE</p><h2>Learn the building blocks</h2><p>Small ideas that power every digital system.</p></div><div class="lesson-grid" id="lessons"></div></section>
+    <section id="quiz" class="tab-panel quiz-panel"><div class="quiz-card"><div class="quiz-top"><div><p class="eyebrow">CHECK YOUR KNOWLEDGE</p><h2>Logic quiz</h2></div><span class="quiz-progress" id="quizProgress">QUESTION 1 / 10</span></div><div class="progress-track"><span id="progressBar"></span></div><div id="quizContent"></div></div></section>
+  </main>
+  <footer><span>Digital Electronics Logic Gate Simulator</span><span>Choose a component · Toggle inputs · Explore the truth table</span></footer>
+  <script src="script.js"></script>
+</body>
+</html>
